@@ -8,10 +8,11 @@ import entities.Contatos;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        
         Agenda agenda = new Agenda();
 
         while (true) {
+        	Scanner sc = new Scanner(System.in);
             System.out.println("1 - Para adicionar;");
             System.out.println("2 - Para listar todos os contatos;");
             System.out.println("3 - Para atualizar contato;");
@@ -19,7 +20,7 @@ public class Main {
             System.out.println("5 - Para finalizar programa;");
 
             int opcao = sc.nextInt();
-            sc.nextLine(); // Consumir a nova linha pendente
+            sc.nextLine(); 
 
             switch (opcao) {
                 case 1:
@@ -27,7 +28,7 @@ public class Main {
                     String nome = sc.nextLine();
                     System.out.println("Digite a idade: ");
                     int idade = sc.nextInt();
-                    sc.nextLine(); // Consumir a nova linha pendente
+                    sc.nextLine(); 
                     System.out.println("Digite o telefone: ");
                     String telefone = sc.nextLine();
                     System.out.println("Digite o endereço: ");

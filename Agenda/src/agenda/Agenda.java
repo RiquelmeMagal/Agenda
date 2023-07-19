@@ -37,10 +37,13 @@ public class Agenda {
 
     public void atualizarContatos(String nome) {
         Scanner sc = new Scanner(System.in);
+        boolean contatoEncontrado = false;
+        
         for (Contatos todosContatos : contatos) {
             if (todosContatos.getNome().equals(nome)) {
+            	
                 System.out.println("Digite a nova idade:");
-                int novaIdade = sc.nextInt();
+                Integer novaIdade = sc.nextInt();
                 sc.nextLine();
                 todosContatos.setIdade(novaIdade);
 
@@ -51,11 +54,15 @@ public class Agenda {
                 String novoEndereco = sc.nextLine();
                 todosContatos.setEndereco(novoEndereco);
                 System.out.println("Lista 100% atualizada.");
-                sc.close();
+                contatoEncontrado = true;
             }
+            
         }
-
-        System.out.println("Não achamos esse nome na lista!");
+        if (!contatoEncontrado) {
+        	System.out.println("Não achamos esse nome na lista!");
+        }
+        return;
+        
         
     }
 
